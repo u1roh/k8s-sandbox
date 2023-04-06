@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/b1alpha1
+kind: Application
+metadata:
+  name: hogehoge-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/u1roh/k8s-sandbox.git
+    targetRevision: HEAD
+    path: dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: myapp
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      selfHead: true
+      prune: true
