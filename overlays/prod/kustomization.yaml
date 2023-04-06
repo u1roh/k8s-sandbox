@@ -5,5 +5,5 @@ bases:
   - ../../base
 
 namespace: myapp-prod
-patchStrategicMerge:
+patchesStrategicMerge:
   - change-to-loadbalancer.yaml
