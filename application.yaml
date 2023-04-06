@@ -1,4 +1,4 @@
-apiVersion: argoproj.io/b1alpha1
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: hogehoge-app
@@ -16,5 +16,5 @@ spec:
     syncOptions:
       - CreateNamespace=true
     automated:
-      selfHead: true
+      selfHeal: true
       prune: true
